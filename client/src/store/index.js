@@ -5,6 +5,8 @@ import users from './modules/users'
 import projects from './modules/projects'
 import tasks from './modules/tasks'
 
+import cable from './plugins/cable'
+
 Vue.use(Vuex)
 
 const debug = process.env.NODE_ENV !== 'production'
@@ -15,5 +17,8 @@ export default new Vuex.Store({
     projects,
     tasks,
   },
+  plugins: [
+    cable,
+  ],
   strict: debug,
 })

@@ -11,6 +11,7 @@
     "lint": "eslint --ext .js,.vue src spec"
   },
   "dependencies": {
+    "actioncable": "^5.1.4",
     "anchorme": "^1.1.2",
     "autosize": "^3.0.21",
     "chart.js": "^2.6.0",
@@ -79,7 +80,11 @@
     "npm": ">= 3.0.0"
   },
   "jest": {
-    "moduleFileExtensions": ["js", "json", "vue"],
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "vue"
+    ],
     "transform": {
       ".*\\.(vue)$": "<rootDir>/node_modules/vue-jest",
       "^.+\\.js$": "<rootDir>/node_modules/babel-jest"

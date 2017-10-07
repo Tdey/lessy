@@ -6,6 +6,11 @@ class Api::Users::ProjectsController < ApiController
 
   def create
     @project = Project.create!(create_project_params)
+    ActionCable.server.broadcast(
+      "projects_of_#{current_user.id}",
+      type: 'new',
+      project: @project.to_json,
+    )
     render status: :created
   end
 
